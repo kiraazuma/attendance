@@ -25,7 +25,6 @@ if st.button("受付する"):
     for i, row in enumerate(records):
         if row["名前"] == name:
             found = True
-            st.write(f"受付済みの値: {row['受付済み']} (type: {type(row['受付済み'])})")
             if str(row["受付済み"]).upper() == "TRUE":
                 st.warning("すでに登録されています")
             else:
