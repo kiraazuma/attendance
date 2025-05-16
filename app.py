@@ -11,7 +11,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
 client = gspread.authorize(creds)
 
 # スプレッドシートに接続
-spreadsheet = client.open("講演会受付")
+spreadsheet = client.open_by_key("1uNk3bJIIMtXOy2hrZoGOmMk6wc9lLK8yYuRCg9M69Lo")
 sheet = spreadsheet.sheet1
 
 # Streamlit UI
