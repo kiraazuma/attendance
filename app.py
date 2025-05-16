@@ -24,12 +24,13 @@ if st.button("受付する"):
     found = False
     for i, row in enumerate(records):
         if row["名前"] == name:
-            if row["受付済み"] == True:
-                st.warning("すでに受付済みです")
-            else:
-                sheet.update_cell(i+2, 2, "TRUE")  # 行、列
-                st.success("受付が完了しました！")
             found = True
+            st.write(f"受付済みの値: {row['受付済み']} (type: {type(row['受付済み'])})")
+            if str(row["受付済み"]).upper() == "TRUE":
+                st.warning("すでに登録されています")
+            else:
+                sheet.update_cell(i+2, 2, "TRUE")
+                st.success("受付が完了しました！")
             break
     if not found:
         st.error("名前が見つかりませんでした")
