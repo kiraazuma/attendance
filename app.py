@@ -17,7 +17,7 @@ sheet = spreadsheet.sheet1
 # Streamlit UI
 st.title("講演会受付")
 
-name = st.text_input("名前を入力してください")
+name = st.text_input("名前を全角ひらがなスペースなしで入力してください")
 
 if st.button("受付する"):
     records = sheet.get_all_records()
